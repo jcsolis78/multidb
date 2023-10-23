@@ -24,4 +24,11 @@ public class TestController {
         return services.findAll(db);
     }
 
+    @GetMapping("/{id}")
+    public Resources findById(@PathVariable Long id){
+        String db = "local";
+        return services.findById(db, id);
+
+    }
+
 }
