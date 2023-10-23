@@ -30,4 +30,10 @@ public class QueryServices {
     }
 
 
+    public Resources findById(String db, Long id){
+        setRepository(db);
+        return resource.findById(id).orElseThrow(()-> new RuntimeException("No existe el registro con el ID: " + id));
+    }
+
+
 }
